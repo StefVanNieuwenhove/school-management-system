@@ -1,21 +1,15 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
+import { Inter } from 'next/font/google';
 import './globals.css';
+import { Drawer } from '@/components/navigation';
 
-const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
-});
-const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
+const inter = Inter({
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: 'Nextjs - Shadcn - Firebase Template',
-  description: 'Template for Nextjs, Shadcn, Firebase',
+  title: 'School Management System',
+  description: 'School Management System, smartschool clone',
 };
 
 export default function RootLayout({
@@ -25,8 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={inter.className}>
+        <Drawer />
         {children}
       </body>
     </html>

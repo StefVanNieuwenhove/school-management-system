@@ -1,5 +1,6 @@
-export type User = {
-  id: string;
+export type Link = {
+  href: string;
   name: string;
-  email: string;
+  icon: React.ReactNode;
+  subLinks?: Link[];
 };
