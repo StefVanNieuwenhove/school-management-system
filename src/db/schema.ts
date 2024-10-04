@@ -4,10 +4,14 @@ export type Student = {
   email: string;
   age: number;
   class: Class;
+  createdAt: Date;
+  updatedAt: Date;
 };
 
 export type Class = {
   id: string;
   name: string;
   students?: Student[];
+  createdAt: Date;
+  updatedAt: Date;
 };
