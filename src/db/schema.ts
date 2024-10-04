@@ -9,5 +9,5 @@ export type Student = {
 export type Class = {
   id: string;
   name: string;
-  students: Student[];
+  students?: Student[];
 };

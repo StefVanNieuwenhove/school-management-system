@@ -4,3 +4,12 @@ export type Link = {
   icon: React.ReactNode;
   subLinks?: Link[];
 };
+
+export type CreateClassFormData = {
+  name: string;
+};
+
+export type FormResponse = {
+  type: 'success' | 'error';
+  message: string;
+};

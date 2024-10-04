@@ -1,7 +1,11 @@
 import React from 'react';
 
-const AdminClassesPage = () => {
-  return <div>AdminClassesPage</div>;
+const AdminClassesPage = async () => {
+  return (
+    <section>
+      <p></p>
+    </section>
+  );
 };
 
 export default AdminClassesPage;

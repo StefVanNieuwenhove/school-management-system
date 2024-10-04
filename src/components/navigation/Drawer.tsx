@@ -13,9 +13,8 @@ import { Menu } from 'lucide-react';
 import { useState } from 'react';
 import Link from 'next/link';
 import { adminLinks, publicLinks, studentLinks } from '@/lib/links';
-import { Tooltip, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
-import { TooltipContent } from '@radix-ui/react-tooltip';
 import { usePathname } from 'next/navigation';
+import { H1 } from '../typography';
 
 const Drawer = () => {
   const [open, setOpen] = useState(false);
@@ -26,70 +25,37 @@ const Drawer = () => {
         className={
           open
             ? 'hidden'
-            : 'h-screen w-max px-4 py-6 mt-14 flex flex-col justify-between items-center overflow-scroll z-10 fixed top-0 left-0 border-r'
+            : 'h-screen w-max px-4 py-6 mt-14 flex flex-col justify-between items-center overflow-scroll z-10 fixed top-0 left-0 border-r bg-base-100 backdrop-saturate-200 backdrop-blur-2xl'
         }>
         <nav className='flex flex-col space-y-2'>
           {publicLinks.map((link) => (
             <Link key={link.href} href={link.href}>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant={pathname === link.href ? 'outline' : 'ghost'}
-                      size={'icon'}
-                      className={pathname === link.href ? 'border-b-2' : ''}>
-                      {link.icon}
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent side={'right'} className='pl-3'>
-                    <p className='text-sm backdrop-saturate-200 backdrop-blur-xl'>
-                      {link.name}
-                    </p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+              <Button
+                variant={pathname === link.href ? 'outline' : 'ghost'}
+                size={'icon'}
+                className={pathname === link.href ? 'border-b-2' : ''}>
+                {link.icon}
+              </Button>
             </Link>
           ))}
           {adminLinks.map((link) => (
             <Link key={link.href} href={link.href}>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant={pathname === link.href ? 'outline' : 'ghost'}
-                      size={'icon'}
-                      className={pathname === link.href ? 'border-b-2' : ''}>
-                      {link.icon}
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent side={'right'} className='pl-3'>
-                    <p className='text-sm backdrop-saturate-200 backdrop-blur-xl'>
-                      {link.name}
-                    </p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+              <Button
+                variant={pathname === link.href ? 'outline' : 'ghost'}
+                size={'icon'}
+                className={pathname === link.href ? 'border-b-2' : ''}>
+                {link.icon}
+              </Button>
             </Link>
           ))}
           {studentLinks.map((link) => (
             <Link key={link.href} href={link.href}>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant={pathname === link.href ? 'outline' : 'ghost'}
-                      size={'icon'}
-                      className={pathname === link.href ? 'border-b-2' : ''}>
-                      {link.icon}
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent side={'right'} className='pl-3'>
-                    <p className='text-sm backdrop-saturate-200 backdrop-blur-xl'>
-                      {link.name}
-                    </p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+              <Button
+                variant={pathname === link.href ? 'outline' : 'ghost'}
+                size={'icon'}
+                className={pathname === link.href ? 'border-b-2' : ''}>
+                {link.icon}
+              </Button>
             </Link>
           ))}
         </nav>
@@ -145,9 +111,7 @@ const Drawer = () => {
           </SheetHeader>
         </SheetContent>
       </Sheet>
-      <h1 className='w-full text-xl font-bold underline text-center'>
-        Smart Management
-      </h1>
+      <H1 className='w-full text-center'>Smart Management</H1>
     </header>
   );
 };
